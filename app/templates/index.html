@@ -4,11 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+     rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+     crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
+     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
+     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+     crossorigin="anonymous" />
     {% block head %}{% endblock %}
 </head>
 
 <body>
-    {% block body %}{% endblock %}
+    <header class="header-area overlay ">
+  
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <span style="font-family: cursive;">
+                        LEPRINT MEDIA
+                    </span>
+                </a>
+                <div id="main-nav" class="collapse navbar-collapse d-flex justify-content-end">
+                    <ul class="navbar-nav ml-auto">
+                        <li><a href="#" class="nav-item nav-link active">Home</a></li>
+                        <li><a href="#" class="nav-item nav-link">About Us</a></li>
+                        <li><a href="#" class="nav-item nav-link">Contact</a></li>
+                    </ul>
+                </div>
+              
+            </div>
+        </nav>
+        <div class="overlaybrandContent d-flex justify-content-center w-100" 
+        style="position: absolute; margin-top: 15%;">
+            <h2 class="text-white">
+                <span class="p-5" 
+                style="background-color: rgba(72, 133, 11, 0.7);">
+                    <strong>
+                        WELCOME TO LEPRINT MEDIA
+                    </strong>
+                </span>
+            </h2>
+        </div>
+    </header>
+    <div class="newsMainBlock w-100 h-100 clear-top min-vh-100">
+    <div class="contentDiv"
+    style=" overflow: auto;  padding-bottom:150px;"
+    >     
+        {% block body %}
+   
+        {% endblock %}
+    </div>
+
+    </div>
+    <footer>
+        <section id="footer">
+            <div class="container">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-sm-5">
+                        <ul class="list-unstyled list-inline social text-center">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a> @kevin_leresi</li> <br>
+                            <li><a href="#"><i class="fa fa-envelope"></i></a> kevinleparwa@gmail.com</li>
+                        </ul>
+                    </div>
+                    </hr>
+  	
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center text-white">
+                        <p>&copy 2021 All right Reversed</p>
+                    </div>
+                    </hr>
+                </div>	
+            </div>
+        </section>
+   
+    </footer>
 </body>
 </html>
