@@ -260,3 +260,8 @@ section {
 	color:#eeeeee;
 }
 
+
+ul {
+  list-style-type: none;
+}
+
