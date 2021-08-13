@@ -72,7 +72,7 @@ body{
   cursor: pointer;
   outline: none;
 }
-.navbar .navbar-toggler .menu-icon-bar {
+.navbar .navbar-toggler .menu-icon-bar{
   position: absolute;
   left: 15px;
   right: 15px;
@@ -92,11 +92,11 @@ body{
 }
 .navbar .navbar-toggler .menu-icon-bar:last-child {
   opacity: 1;
-  -webkit-transform: translateY(-1px) rotate(135deg);
-  -ms-sform: translateY(-1px) rotate(135deg);
-  transform: translateY(-1px) rotate(135deg);
+  -webkit-transform: translateY(-1px) rotate(0);
+  -ms-sform: translateY(-1px) rotate(0deg);
+  transform: translateY(-1px) rotate(0);
 }
-.navbar .navbar-toggler.collapsed .menu-icon-bar {
+.navbar .navbar-toggler.collapsed .menu-icon-bar{
   opacity: 1;
 }
 .navbar .navbar-toggler.collapsed .menu-icon-bar:first-child {
