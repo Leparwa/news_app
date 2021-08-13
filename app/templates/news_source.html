@@ -14,17 +14,16 @@
         <div class="col-md-6">
             <div class="card shadow w-100">
                 <div class="row p-3 ">
-                    <div class="col-md-4 d-flex justify-content-center m-1">
+                    <div class="col-md-4 col-sm-12 d-flex justify-content-center m-1">
                         <div class="imgSection">
-                            <img class="d-flex" src="{{source_article.urlToImage}}" alt="NEWS IMAGE" width="196px">
+                            <img class="d-flex" src="{{source_article.urlToImage}}" alt="NEWS IMAGE" width="199px" height="100%">
                         </div>
                     </div>
                     <div class="col-md-7 d-flex justify-content-center">
                         <div class="divContent">
-                            <h5>{{source_article.title}}</h5>
-                            <hr>
-                            <p>{{source_article.description}}</p> 
-                            <a href="{{source_article.url}}" target="blank">read</a>
+                            <a href="{{source_article.url}}" class="text-danger"><h5>{{source_article.title}}</h5></a>
+                            <p><small>{{source_article.description}}</small></p> 
+                            <p class="text-muted mt-0 pull-right"><small>{{source_article.author}}</small></p>
                         </div>
                     </div>
                 </div>
