@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import News
+from .models import News, news_article
 
 # Getting api key
 apiKey = None
@@ -21,7 +21,6 @@ def get_news(endpoint):
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
 
-        news_results = None
 
         if get_news_response['sources']:
             news_results_list = get_news_response['sources']
@@ -29,6 +28,50 @@ def get_news(endpoint):
 
 
     return news_results
+
+def get_source_news(endpoint):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_source_url = base_url.format(endpoint, apiKey)
+
+    with urllib.request.urlopen(get_source_url) as url:
+        get_source_articles = url.read()
+        get_articles_response = json.loads(get_source_articles)
+
+        if get_articles_response['articles']:
+            articles_results = get_articles_response['articles']
+            # articles_results_list = get_articles_response['articles']
+            # articles_results = process_results(articles_results_list)
+
+
+    return articles_results
+
+    
+def process_articles_results(articles_results_list):
+    '''
+    Function  that processes the News result and transform them to a list of Objects
+
+    Args:
+        news_list: A list of dictionaries that contain movie details
+
+    Returns :
+        news_results: A list of movie objects
+    '''
+    articles_results = []
+    for article_item in articles_results_list:
+        source = article_item .get('source')
+        author = article_item .get('author')
+        title = article_item .get('title')
+        url = article_item .get('url')
+        description = article_item .get('description')
+        urlToImage = article_item .get('urlToImage')
+        publishedAt = article_item .get('publishedAt')
+        content = article_item .get('content')
+        articles_object = news_article(source,description,url, title, urlToImage, publishedAt, content, author)
+        articles_results.append(articles_object)
+
+    return articles_results 
 
 def process_results(news_list):
     '''
@@ -52,6 +95,7 @@ def process_results(news_list):
 
 
         news_object = News(id,name,description,url,category,country, language)
+
         news_results.append(news_object)
 
     return news_results

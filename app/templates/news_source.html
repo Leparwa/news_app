@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+  {% block body %}
+  <div class="container-fluid p-4">
+    <div class="container-fluid d-flex justify-content-center bg-primary text-white mb-3">
+       <span>
+        <h3>
+            {{source[1].source.name}}      
+          </h3> 
+          
+       </span>
+    </div>
+    <div class="row ">
+        {% for source_article in source %}
+        <div class="col-md-6">
+            <div class="card shadow w-100">
+                <div class="row p-3 ">
+                    <div class="col-md-4 d-flex justify-content-center m-1">
+                        <div class="imgSection">
+                            <img class="d-flex" src="{{source_article.urlToImage}}" alt="NEWS IMAGE" width="196px">
+                        </div>
+                    </div>
+                    <div class="col-md-7 d-flex justify-content-center">
+                        <div class="divContent">
+                            <h5>{{source_article.title}}</h5>
+                            <hr>
+                            <p>{{source_article.description}}</p> 
+                            <a href="{{source_article.url}}" target="blank">read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}  
+    </div>
+  </div>
+  {% endblock %}

@@ -44,3 +44,23 @@ class Review:
                 response.append(review)
 
         return response
+
+class news_article:
+    '''
+    News class to define News Article Objects
+    '''
+
+    def __init__(self, source, description,author,title,urlToImage, publishedAt, content, url):
+        self.source = source
+        self.author = author
+        self.description = description
+        self.url = url
+        self.title = title
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
+        self.content = content
+
+class news_article_source:
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name

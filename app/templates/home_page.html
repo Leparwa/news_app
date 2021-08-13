@@ -16,7 +16,8 @@
             <div class="card-header bg-primary">
               <span class="d-block">
                 <h4><small>{{news_source.name}}</small></h4>
-                <span class="d-flex justify-content-end"><button type="button" class="btn btn-sm btn-success">visit</button>
+                <span class="d-flex justify-content-end">
+                  <a href="{{url_for('main.get_source',id = news_source.id)}}" type="button" class="btn btn-sm btn-success">visit</a>
                 </span>
               </span>
             </div>
